@@ -12,7 +12,7 @@ The game is played by revealing squares of the grid by clicking or otherwise ind
 
 In some versions, a question mark may be placed in an unrevealed square to serve as an aid to logical deduction. Implementations may also allow players to quickly "clear around" a revealed square once the correct number of mines have been flagged around it. The game is won when all mine-free squares are revealed, because all mines have been located.
 
-Some versions of Minesweeper will set up the board by never placing a mine on the first square revealed.[1] Minesweeper for versions of Windows protects the first square revealed; from Windows 7 onward, players may elect to replay a board, in which case the first square may no longer be protected.
+Some versions of Minesweeper will set up the board by never placing a mine on the first square revealed. Minesweeper for versions of Windows protects the first square revealed; from Windows 7 onward, players may elect to replay a board, in which case the first square may no longer be protected.
 
 [Read more!](https://en.wikipedia.org/wiki/Minesweeper_(video_game))
 
