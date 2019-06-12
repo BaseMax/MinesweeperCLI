@@ -26,3 +26,6 @@ Some versions of Minesweeper will set up the board by never placing a mine on th
 - https://www.coolmathgames.com/0-minesweeper
 - https://minesweeper.online/en/
 - https://cardgames.io/minesweeper/
+- http://birrell.org/andrew/minesweeper/expert.php
+- http://www.chezpoor.com/minesweeper/minecore.html
+- http://play-minesweeper.com/
