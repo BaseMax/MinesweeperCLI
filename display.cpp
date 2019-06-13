@@ -1,5 +1,13 @@
-// Max Base
-// https://github.com/BaseMax/MinesweeperCLI
+/**
+*
+* @Name : MinesweeperCLI/display.cpp
+* @Version : 1.0
+* @Programmer : Max
+* @Date : 2018-07-12
+* @Released under : https://github.com/BaseMax/MinesweeperCLI/blob/master/LICENSE
+* @Repository : https://github.com/BaseMax/MinesweeperCLI
+*
+**/
 #include <algorithm>
 // #include <stdlib.h>
 // #include <stdio.h>
