@@ -3,7 +3,7 @@
 * @Name : MinesweeperCLI/display.cpp
 * @Version : 1.0
 * @Programmer : Max
-* @Date : 2018-07-12
+* @Date : 2019-07-12, 2019-07-17
 * @Released under : https://github.com/BaseMax/MinesweeperCLI/blob/master/LICENSE
 * @Repository : https://github.com/BaseMax/MinesweeperCLI
 *
@@ -57,15 +57,25 @@ int countBomb(int board[size][size], int rowIndex, int columnIndex) {
     // 2 # # #
     int count=0;
     // cout << "Bombs: ";
-    for(int x=columnIndex-1; x< columnIndex+1; x++) {
-        for(int y=rowIndex-1; y< rowIndex+1; y++) {
-            if(isBomb(board, x, y)) {
-                cout << "(" << x << ", " << y << ") ";
-                count++;
+    for (int _x = rowIndex - 1; _x <= rowIndex+1; _x++) {
+        for (int _y = columnIndex -1; _y <= columnIndex+1; _y++) {
+            if (_x >= 0 && _x < size && _y >= 0 && _y < size) {
+                if (isBomb(board, _x, _y)) {
+                    // cout << "(" << _x << ", " << _y << ")\n";
+                    count++;
+                }
             }
         }
     }
-    cout << "\n";
+    // for(int x=columnIndex-1; x< columnIndex+1; x++) {
+    //     for(int y=rowIndex-1; y< rowIndex+1; y++) {
+    //         if(isBomb(board, x, y)) {
+    //             cout << "(" << x << ", " << y << ") ";
+    //             count++;
+    //         }
+    //     }
+    // }
+    // cout << "\n";
     return count;
 }
 
@@ -84,8 +94,7 @@ void boardRender(int board[size][size]) {
             }
             else if(board[rowIndex][columnIndex] == SELECTED) {
                 #if NUMBER
-                    // cout << countBomb(board, rowIndex, columnIndex);
-                    cout << "#";
+                    cout << countBomb(board, rowIndex, columnIndex);
                 #else
                     cout << "#";
                 #endif
@@ -175,15 +184,16 @@ int main(int argc, char const *argv[]) {
     }
     int x, y;
     while(true) {
-        cout << "Render:\n";
+        // cout << "Render:\n";
+        // boardRender(board);
+        // for(int w=0; w<= size; w++) {
+        //     for(int h=0; h<= size; h++) {
+        //         cout << "Bombs of " << w << ", " << h << ": ";
+        //         cout << countBomb(board, w, h);
+        //         cout << "\n";
+        //     }
+        // }
         boardRender(board);
-        for(int w=0; w<= size; w++) {
-            for(int h=0; h<= size; h++) {
-                cout << "Bombs of " << w << ", " << h << ": ";
-                cout << countBomb(board, w, h);
-                cout << "\n";
-            }
-        }
         cout << "Enter your positions:\nX> ";
         cin >> x;
         cout << "Y> ";
