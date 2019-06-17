@@ -4,7 +4,7 @@ Simple **minesweeper** game developed using **C++** in the **CLI** mode.
 
 ![ScreenShot](screenshot1.png)
 
-![ScreenShot](screenshot2.png)
+![ScreenShot](screenshot2.jpg)
 
 ## About Game
 
