@@ -121,7 +121,7 @@ void main(void) {
 						if(mn[i][j] && bz[i][j] != 'B')
 							bz[i][j] = 'x';
 				display();
-				cout << "                   you lost\n";
+				cout << "you lost" << endl;
 				break;
 			}
 			game(x, y);
