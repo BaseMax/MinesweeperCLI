@@ -1,9 +1,9 @@
 /**
 *
-* @Name : MinesweeperCLI/game.cpp
+* @Name : MinesweeperCLI/display.cpp
 * @Version : 1.0
 * @Programmer : Max
-* @Date : 2019-07-12, 2019-07-16
+* @Date : 2018-07-12
 * @Released under : https://github.com/BaseMax/MinesweeperCLI/blob/master/LICENSE
 * @Repository : https://github.com/BaseMax/MinesweeperCLI
 *
