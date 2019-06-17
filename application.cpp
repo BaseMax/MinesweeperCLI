@@ -23,7 +23,7 @@ const int size = 8;
 
 int main() {
 	int board[size][size] = {-10};
-	int selected[size][size] = {0};
+	bool selected[size][size] = {0};
 	srand(time(0));
 	int boms;
 	cin >> boms;
