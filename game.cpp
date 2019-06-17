@@ -1,6 +1,6 @@
 /**
 *
-* @Name : MinesweeperCLI/display.cpp
+* @Name : MinesweeperCLI/game.cpp
 * @Version : 1.0
 * @Programmer : Max
 * @Date : 2019-07-12, 2019-07-17
@@ -23,6 +23,8 @@ const unsigned int size=8;// 8 * 8 = 64
 #define BOMB        -1
 #define SELECTED    -2
 #define NUMBER      1
+// #define SHOW_BOMBS  1
+#define SHOW_BOMBS  0
 
 bool isSelected(int board[size][size], int rowIndex, int columnIndex) {
     if(board[rowIndex][columnIndex] == SELECTED) {
@@ -90,7 +92,11 @@ void boardRender(int board[size][size]) {
         for(int columnIndex=0; columnIndex < size; columnIndex++) {
             cout << "|";
             if(board[rowIndex][columnIndex] == BOMB) {
-                cout << "*";
+                #if SHOW_BOMBS
+                    cout << "*";
+                #else
+                    cout << " ";
+                #endif
             }
             else if(board[rowIndex][columnIndex] == SELECTED) {
                 #if NUMBER
