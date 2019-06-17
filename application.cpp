@@ -23,6 +23,7 @@ const int size = 8;
 
 int main() {
 	int board[size][size] = {-10};
+	int selected[size][size] = {0};
 	srand(time(0));
 	int boms;
 	cin >> boms;
@@ -51,17 +52,17 @@ int main() {
 			system("clear");
 		#endif
 		cout << "  ";
-		for (int x = 0; x < s; x++) {
+		for (int x = 0; x < size; x++) {
 			cout << x << "|";
 		}
 		cout << "\n";
-		for (int x = 0; x < s; x++) {
+		for (int x = 0; x < size; x++) {
 			cout << x << "|";
-			for (int y = 0; y < s; y++) {
+			for (int y = 0; y < size; y++) {
 				if (board[x][y] == -1) {
 					cout << "#";
 				}
-				else if (board[x][y] > 0) {
+				else if (board[x][y] >= 0 && selected[x][y] == true) {
 					cout << board[x][y];
 				}
 				else {
@@ -73,31 +74,33 @@ int main() {
 		}
 
 		int x, y;
-		cout << "enter ::";
-		cin >> x >> y;
+		cout << "Enter your position:\n> ";
+		cin >> x;
+		cout << "> ";
+		cin >> y;
 		if (board[x][y] == -1) {
-			cout << "bakhtiid";
+			cout << "Error: Game Over!\n";
 			break;
 		}
 		else {
 			int number = 0;
-			if (x >= 0 && x < s && y >= 0 && y < s) {
+			if (x >= 0 && x < size && y >= 0 && y < size) {
 				/*
 				if (x > 0 && y > 0 && board[x - 1][y - 1] == -1) number++;
 				if (x > 0 && board[x - 1][y] == -1) number++;
-				if (x > 0 && y > 0 && y < s - 1 && board[x - 1][y + 1] == -1) number++;
+				if (x > 0 && y > 0 && y < size - 1 && board[x - 1][y + 1] == -1) number++;
 
 				if (y > 0 && board[x][y - 1] == -1) number++;
 				if (board[x][y] == -1) number++;
-				if (y < s - 1 && board[x][y + 1] == -1) number++;
+				if (y < size - 1 && board[x][y + 1] == -1) number++;
 
-				if (x < s - 1 && y > 0 && board[x + 1][y - 1] == -1) number++;
-				if (x < s-1 && board[x + 1][y] == -1) number++;
-				if (x < s-1 && y < s-1 && board[x + 1][y + 1] == -1) number++;
+				if (x < size - 1 && y > 0 && board[x + 1][y - 1] == -1) number++;
+				if (x < size-1 && board[x + 1][y] == -1) number++;
+				if (x < size-1 && y < size-1 && board[x + 1][y + 1] == -1) number++;
 				*/
 				for (int _x = x - 1; _x <= x+1; _x++) {
 					for (int _y = y -1; _y <= y+1; _y++) {
-						if (_x >= 0 && _x < s && _y >= 0 && _y < s) {
+						if (_x >= 0 && _x < size && _y >= 0 && _y < size) {
 							if (board[_x][_y] == -1) {
 								cout << "(" << _x << ", " << _y << ")\n";
 								number++;
@@ -105,15 +108,17 @@ int main() {
 						}
 					}
 				}
-				board[x][y] = number;
 				wins++;
-				if (wins == (s*s) - bombsCount) {
+				if (wins == (size*size) - bombsCount) {
 					cout << "Win!\n";
 					break;
 				}
+				selected[x][y] = true;
+				board[x][y] = number;
 			}
 			else {
-				cout << "Error!\n";
+				// cout << "Error!\n";
+				// break;
 			}
 		}
 	}
