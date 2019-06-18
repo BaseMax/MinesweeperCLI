@@ -16,6 +16,7 @@
 #include <cstdlib> //rand()?
 #include <cstdio>
 #include <ctime>
+#include <string> //bug
 using namespace std;
 
 const unsigned int size = 8;// 8 * 8 = 64
