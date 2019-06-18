@@ -8,13 +8,13 @@
 * @Repository : https://github.com/BaseMax/MinesweeperCLI
 *
 **/
-#include <algorithm>
+#include <algorithm>// not required!
 // #include <stdlib.h>
 // #include <stdio.h>
 // #include <time.h>
 #include <iostream>
-#include <cstdlib>
-#include <cstdio>
+#include <cstdlib> //rand()?
+// #include <cstdio>
 #include <ctime>
 using namespace std;
 
