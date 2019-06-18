@@ -218,6 +218,7 @@ int main(int argc, char const *argv[]) {
             system("cls");
         #elif __linux__
             cout << "\033[2J";
+            // system("clear");
         #endif
     }
     return 0;
