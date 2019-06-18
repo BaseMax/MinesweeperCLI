@@ -22,8 +22,8 @@ using namespace std;
 const int size = 8;
 
 int main() {
-	int board[size][size] = {-10};
-	bool selected[size][size] = {0};
+	int board[size][size] = { 0 };
+	bool selected[size][size] = { 0 };
 	srand(time(0));
 	int boms;
 	cin >> boms;
@@ -45,12 +45,12 @@ int main() {
 	}
 	int wins = 0;
 	while (true) {
-		#ifdef _WIN32
-			system("cls");
-		#elif __linux__
-			// cout << "\033[2J";
-			system("clear");
-		#endif
+#ifdef _WIN32
+		system("cls");
+#elif __linux__
+		// cout << "\033[2J";
+		system("clear");
+#endif
 		cout << "  ";
 		for (int x = 0; x < size; x++) {
 			cout << x << "|";
@@ -72,7 +72,14 @@ int main() {
 			}
 			cout << "\n";
 		}
-
+		/*
+		for (int x = 0; x < size; x++) {
+			for (int y = 0; y < size; y++) {
+				cout << x << ", " << y << " = " << board[x][y] << "\n";
+			}
+			cout << "\n";
+		}
+		*/
 		int x, y;
 		cout << "Enter your position:\n> ";
 		cin >> x;
@@ -89,17 +96,15 @@ int main() {
 				if (x > 0 && y > 0 && board[x - 1][y - 1] == -1) number++;
 				if (x > 0 && board[x - 1][y] == -1) number++;
 				if (x > 0 && y > 0 && y < size - 1 && board[x - 1][y + 1] == -1) number++;
-
 				if (y > 0 && board[x][y - 1] == -1) number++;
 				if (board[x][y] == -1) number++;
 				if (y < size - 1 && board[x][y + 1] == -1) number++;
-
 				if (x < size - 1 && y > 0 && board[x + 1][y - 1] == -1) number++;
 				if (x < size-1 && board[x + 1][y] == -1) number++;
 				if (x < size-1 && y < size-1 && board[x + 1][y + 1] == -1) number++;
 				*/
-				for (int _x = x - 1; _x <= x+1; _x++) {
-					for (int _y = y -1; _y <= y+1; _y++) {
+				for (int _x = x - 1; _x <= x + 1; _x++) {
+					for (int _y = y - 1; _y <= y + 1; _y++) {
 						if (_x >= 0 && _x < size && _y >= 0 && _y < size) {
 							if (board[_x][_y] == -1) {
 								cout << "(" << _x << ", " << _y << ")\n";
